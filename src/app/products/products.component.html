@@ -4,6 +4,24 @@
         <div class="card-body">
             <h3 class="card-title">Product component</h3>
         </div>
+
+        <table class="table ms-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <input type="checkbox" [checked]="product.checked" (change)="product.checked = !product.checked">
+                    </td>
+                </tr>
+        </table>
         
     </div>
 </div>
