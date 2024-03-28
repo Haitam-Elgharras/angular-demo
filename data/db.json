@@ -59,6 +59,12 @@
       "name": "Apple TV 4K",
       "price": 179,
       "checked": true
+    },
+    {
+      "id": "335b",
+      "name": "pixel 5",
+      "price": "1500",
+      "checked": true
     }
   ]
 }

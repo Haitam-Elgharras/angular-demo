@@ -10,11 +10,12 @@ import { Product } from '../model/product.model';
 export class ProductsComponent implements OnInit {
   products: Array<Product> = [];
   error: any;
+  keyword: string = '';
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe({
+    this.productService.getProducts(1,4).subscribe({
       next: data => {
         this.products = data;
       },
@@ -50,5 +51,26 @@ export class ProductsComponent implements OnInit {
         this.products = [...this.products, product];
       },
     });
+  }
+
+  
+  search() {
+    // server side search
+    this.productService.search(this.keyword).subscribe(
+      {
+        next: (products: Array<Product>) => {
+        this.products = products;
+        console.log('products', products, "keyword", this.keyword);
+      },
+      error: (error:any) => {
+        this.error = error;
+      }
+    }
+    );
+
+    // client side search
+    // this.products = this.products.filter((product) =>
+    //   product.name.toLowerCase().includes(this.keyword.toLowerCase())
+    // );
   }
 }

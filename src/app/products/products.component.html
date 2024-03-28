@@ -14,6 +14,11 @@
         </ng-template>
 
         <ng-template #tableTemplate>
+            <!-- justify the div to the end-->
+            <div class="d-flex gap-3 ms-3" style="width: 300px;">
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="keyword">
+                <button class="btn btn-primary" (click)="search()">Search</button>
+            </div>
             <table class="table ms-3">
                 <thead>
                     <tr>
