@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../model/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -9,15 +10,27 @@ import { Product } from '../model/product.model';
 })
 export class ProductsComponent implements OnInit {
   products: Array<Product> = [];
+
   error: any;
   keyword: string = '';
+  totalPages: number = 0;
+  pageSize: number = 4;
+  currentPage: number = 1;
 
-  constructor(private productService: ProductService) {}
+
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
-    this.productService.getProducts(1,4).subscribe({
-      next: data => {
-        this.products = data;
+    this.searchProducts();
+  }
+
+  searchProducts() {
+    this.productService.searchProducts(this.keyword, this.currentPage, this.pageSize)
+    .subscribe({
+      next: (res) => {
+        this.products = res.body as Array<Product>;
+        let totalProducts:number = +(res.headers.get('X-Total-Count') || 0);
+        this.totalPages = Math.ceil(totalProducts / this.pageSize);
       },
       error: (error) => {
         this.error = error;
@@ -27,9 +40,6 @@ export class ProductsComponent implements OnInit {
 
   handleCheckedChange(product: Product) {
     this.productService.checkProduct(product).subscribe({
-      // next: (updatedProduct) => {
-      //   console.log(updatedProduct);
-      // },
       error: (error) => {
         this.error = error;
       },
@@ -43,7 +53,12 @@ export class ProductsComponent implements OnInit {
   
     this.productService.deleteProduct(product).subscribe({
       next: () => {
-        console.log('Product deleted successfully');
+        // if the last page has only one product, and we delete it, we should go back to the previous page
+        if (!this.products.length) {
+          this.currentPage--;
+        }
+        // if the first page has only one product, and we delete it, we should stay on the first page
+        this.searchProducts();
       },
       error: (error) => {
         this.error = error;
@@ -53,24 +68,12 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  
-  search() {
-    // server side search
-    this.productService.search(this.keyword).subscribe(
-      {
-        next: (products: Array<Product>) => {
-        this.products = products;
-        console.log('products', products, "keyword", this.keyword);
-      },
-      error: (error:any) => {
-        this.error = error;
-      }
+  handleGoToPage(pageNumber: number) {
+    this.currentPage = pageNumber;
+    this.searchProducts();
     }
-    );
 
-    // client side search
-    // this.products = this.products.filter((product) =>
-    //   product.name.toLowerCase().includes(this.keyword.toLowerCase())
-    // );
-  }
+    handleEditProduct(product: Product) {
+      this.router.navigate(['/editProduct', _t28.id]);
+}
 }

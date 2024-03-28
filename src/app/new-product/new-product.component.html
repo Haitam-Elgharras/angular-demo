@@ -18,7 +18,7 @@
                             <label for="checked" class="form-label">Cheked</label>
                             <input type="checkbox" class="form-check-input" formControlName="checked">
                         </div>
-                        <button disabled="productForm.invalid" type="submit" class="btn btn-primary">Save</button>
+                        <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary">Save</button>
                     </form>
                 </div>
             </div>

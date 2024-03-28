@@ -49,22 +49,52 @@
       "checked": true
     },
     {
-      "id": "15",
-      "name": "Apple HomePod Mini",
-      "price": 99,
-      "checked": false
+      "name": "a",
+      "price": 0,
+      "checked": false,
+      "id": "ijNeXBi"
     },
     {
-      "id": "16",
-      "name": "Apple TV 4K",
-      "price": 179,
-      "checked": true
+      "name": "b",
+      "price": null,
+      "checked": null,
+      "id": "8JCes1P"
     },
     {
-      "id": "335b",
-      "name": "pixel 5",
-      "price": "1500",
-      "checked": true
+      "name": "b",
+      "price": 0,
+      "checked": false,
+      "id": "bp3NRVu"
+    },
+    {
+      "name": "a",
+      "price": null,
+      "checked": null,
+      "id": "l_LmZwh"
+    },
+    {
+      "name": "a",
+      "price": 0,
+      "checked": false,
+      "id": "QobODrR"
+    },
+    {
+      "name": "a",
+      "price": null,
+      "checked": null,
+      "id": "nJEDH_X"
+    },
+    {
+      "name": "a",
+      "price": null,
+      "checked": null,
+      "id": "dNqI_la"
+    },
+    {
+      "name": "a",
+      "price": null,
+      "checked": null,
+      "id": "uucc35d"
     }
   ]
 }
