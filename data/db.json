@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Apple MacBook Pro",
+      "price": 2399,
+      "checked": true
+    },
+    {
+      "id": "2",
+      "name": "Dell XPS 15",
+      "price": 1749,
+      "checked": true
+    },
+    {
+      "id": "3",
+      "name": "Microsoft Surface Pro 7",
+      "price": 749,
+      "checked": true
+    },
+    {
+      "id": "4",
+      "name": "HP Spectre x360",
+      "price": 1199,
+      "checked": false
+    },
+    {
+      "id": "5",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "price": 1299,
+      "checked": true
+    },
+    {
+      "id": "6",
+      "name": "Asus ROG Zephyrus G14",
+      "price": 1449,
+      "checked": true
+    },
+    {
+      "id": "7",
+      "name": "Apple iPhone 12 Pro",
+      "price": 999,
+      "checked": true
+    },
+    {
+      "id": "8",
+      "name": "Samsung Galaxy S21",
+      "price": 799,
+      "checked": true
+    },
+    {
+      "id": "9",
+      "name": "Google Pixel 5",
+      "price": 699,
+      "checked": false
+    },
+    {
+      "id": "10",
+      "name": "OnePlus 8 Pro",
+      "price": 899,
+      "checked": false
+    }
+  ]
+}

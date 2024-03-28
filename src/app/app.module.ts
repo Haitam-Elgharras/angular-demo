@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // import forms module
@@ -21,7 +22,8 @@ import { NewProductComponent } from './new-product/new-product.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
