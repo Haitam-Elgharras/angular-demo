@@ -1,27 +1,47 @@
-
 <div class="p-3">
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">Product component</h3>
         </div>
 
-        <table class="table ms-3">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Checked</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let product of products">
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                    <td>
-                        <input type="checkbox" [checked]="product.checked" (change)="handleCheckedChange(product)">
-                    </td>
-                </tr>
-        </table>
+        <ng-template #errorTemplate>
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Error {{error.status}}: {{error.statusText}}</h4>
+                <p>{{error.message}}</p>
+                <hr>
+                <p class="mb-0">Please check the URL: {{error.url}}</p>
+            </div>
+        </ng-template>
+
+        <ng-template #tableTemplate>
+            <table class="table ms-3">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Checked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>
+                            <input type="checkbox" [checked]="product.checked" (change)="handleCheckedChange(product)">
+                        </td>
+                        <!-- button to delete a product -->
+                        <td>
+                            <button class="btn btn-danger" (click)="handleDeleteProduct(product)">
+                                Delete
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+
+        <div *ngIf="error; else tableTemplate; then errorTemplate"></div>
         
     </div>
 </div>

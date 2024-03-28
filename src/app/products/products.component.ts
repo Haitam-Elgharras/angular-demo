@@ -9,6 +9,7 @@ import { Product } from '../model/product.model';
 })
 export class ProductsComponent implements OnInit {
   products: Array<Product> = [];
+  error: any;
 
   constructor(private productService: ProductService) {}
 
@@ -18,7 +19,7 @@ export class ProductsComponent implements OnInit {
         this.products = data;
       },
       error: (error) => {
-        console.log(error);
+        this.error = error;
       },
     });
   }
@@ -29,7 +30,24 @@ export class ProductsComponent implements OnInit {
       //   console.log(updatedProduct);
       // },
       error: (error) => {
-        console.log(error);
+        this.error = error;
+      },
+    });
+  }
+
+  handleDeleteProduct(product: Product) {
+    // optimistic update
+    const updatedProducts = this.products.filter((p) => p.id !== product.id);
+    this.products = updatedProducts;
+  
+    this.productService.deleteProduct(product).subscribe({
+      next: () => {
+        console.log('Product deleted successfully');
+      },
+      error: (error) => {
+        this.error = error;
+        // If there's an error, revert the products list to its original state
+        this.products = [...this.products, product];
       },
     });
   }
