@@ -12,8 +12,7 @@ export class EditProductComponent {
 
   productId!: number;
   productFormGroup!: FormGroup;
-  constructor(private route: ActivatedRoute, private ps: ProductService, private fb: FormBuilder) {
-   }
+  constructor(private route: ActivatedRoute, private ps: ProductService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params["id"];
@@ -23,9 +22,9 @@ export class EditProductComponent {
       next: (product) => {
         this.productFormGroup = this.fb.group({
           id: this.fb.control(product.id),
-          name: this.fb.control(product.name, [Validators.required]),
-          price: this.fb.control(product.price),
-          checked: this.fb.control(product.checked),
+          name: this.fb.control(product.name, [Validators.required, Validators.minLength(3)]),
+          price: this.fb.control(product.price, [Validators.required, Validators.min(0)]),
+          checked: this.fb.control(product.checked, [Validators.required]),
         });
       },
       error: (error) => {
@@ -40,14 +39,13 @@ export class EditProductComponent {
 
     this.ps.updateProduct(product)
     .subscribe({
-      next: (product) => {
-        console.log('product updated');
+      next: () => {
+        
       },
       error: (error) => {
         console.log(error);
       }
     });
-    }
+  }
     
-
 }

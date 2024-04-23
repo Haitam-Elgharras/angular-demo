@@ -25,9 +25,12 @@ export class NewProductComponent implements OnInit{
     let product:Product = this.productForm.value;
 
     this.productService.saveProduct(product).subscribe(
-      {
-        next: (product: Product) => {
+    {
+      next: (product: Product) => {
         console.log('product saved', product);
+        // enforce rendering the new product in the products list
+        product.id = Math.floor(Math.random() * 1000);
+
         this.productForm.reset();
       },
       error: (error) => {

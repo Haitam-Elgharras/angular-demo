@@ -3,21 +3,13 @@
         <div class="card-body">
             <h3 class="card-title">Product component</h3>
         </div>
-
-        <ng-template #errorTemplate>
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">Error {{error.status}}: {{error.statusText}}</h4>
-                <p>{{error.message}}</p>
-                <hr>
-                <p class="mb-0">Please check the URL: {{error.url}}</p>
-            </div>
-        </ng-template>
-
-        <ng-template #tableTemplate>
-            <!-- justify the div to the end-->
-            <div class="d-flex gap-3 ms-3" style="width: 300px;">
-                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="keyword">
-                <button class="btn btn-primary" (click)="searchProducts()">Search</button>
+        <div>
+             <!-- justify the div to the end-->
+             <div class="d-flex gap-3 ms-3" style="width: 300px;">
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="appStateService.productState.keyword">
+                <button class="btn btn-outline-primary" (click)="searchProducts()">
+                    <i class="bi bi-search"></i>
+                </button>
             </div>
             <table class="table ms-3">
                 <thead>
@@ -28,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of appStateService.productState.products">
                         <td>{{product.name}}</td>
                         <td>{{product.price}}</td>
                         <td>
@@ -49,17 +41,15 @@
                 </tbody>
             </table>
             <ul class="nav nav-pils">
-                <li class="nav-item m-1" *ngFor="let page of [].constructor(totalPages); let i = index">
+                <li class="nav-item m-1" *ngFor="let page of [].constructor(appStateService.productState.totalPages); let i = index">
                     <button 
-                    class="btn btn-outline-primary" [ngClass]="{'active': currentPage === i + 1}"
+                    class="btn btn-outline-primary" [ngClass]="{'active': appStateService.productState.currentPage === i + 1}"
                     (click)="handleGoToPage(i+1)">
                         {{i + 1}}
                     </button>
                 </li>
             </ul>
-        </ng-template>
-
-        <div *ngIf="error; else tableTemplate; then errorTemplate"></div>
+        </div>
         
     </div>
 </div>

@@ -1,22 +1,8 @@
-<!-- create a navigation bar -->
-<nav class="p-3">
-  <ul class="nav nav-pills">
-    <li class="nav-item"
-    *ngFor="let action of actions"
-    >
-      <button 
-        [routerLink]="action.path"
-        class="btn btn-outline-success ms-1"
-        routerLinkActive="active" 
-      >
-        {{action.title}}
-        <i class="bi bi-{{action.icon}}"></i>
-      </button>
 
-  </li>
-  </ul>
-</nav>
-
+<app-navbar></app-navbar>
+<app-dashboard></app-dashboard>
 <router-outlet>
   <!-- this is where the router will display the components -->
 </router-outlet>
+<app-error></app-error>
+

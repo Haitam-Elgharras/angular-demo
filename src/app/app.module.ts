@@ -9,6 +9,9 @@ import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorComponent } from './error/error.component';
 
 
 // import forms module
@@ -20,6 +23,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     ProductsComponent,
     NewProductComponent,
     EditProductComponent,
+    DashboardComponent,
+    NavbarComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

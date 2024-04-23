@@ -1,100 +1,70 @@
 {
   "products": [
     {
-      "id": "2",
-      "name": "Dell XPS 16",
-      "price": 1749,
-      "checked": true
+      "name": "a",
+      "price": 0,
+      "checked": true,
+      "id": "VVfVWPl"
     },
     {
-      "id": "8",
-      "name": "Samsung Galaxy S21",
-      "price": 799,
-      "checked": true
+      "name": "dfhsd",
+      "price": 0,
+      "checked": false,
+      "id": "AQxTaJ8"
     },
     {
-      "id": "9",
-      "name": "Google Pixel 5",
-      "price": 699,
+      "name": "dsged",
+      "price": 0,
+      "checked": null,
+      "id": "PtGCRNn"
+    },
+    {
+      "name": "dfhgsd",
+      "price": 0,
+      "checked": null,
+      "id": "r88PDVe"
+    },
+    {
+      "name": "sqrdgs",
+      "price": 0,
+      "checked": true,
+      "id": "6q6xfOX"
+    },
+    {
+      "name": "qsrg",
+      "price": 0,
+      "checked": true,
+      "id": "weqFckW"
+    },
+    {
+      "name": "sfdguhdsf",
+      "price": 0,
+      "checked": false,
+      "id": "9PMPl3o"
+    },
+    {
+      "name": "jsdfhjhsd",
+      "price": 0,
+      "checked": null,
+      "id": "pmC0gnV"
+    },
+    {
+      "id": "39IUknK",
+      "name": "jqdshfjhqs",
+      "price": "80",
       "checked": false
     },
     {
-      "id": "10",
-      "name": "Apple iPhone 12",
-      "price": 799,
-      "checked": true
-    },
-    {
-      "id": "11",
-      "name": "Apple MacBook Pro",
-      "price": 1299,
-      "checked": false
-    },
-    {
-      "id": "12",
-      "name": "Apple iPad Pro",
-      "price": 799,
-      "checked": true
-    },
-    {
-      "id": "13",
-      "name": "Apple Watch Series 6",
-      "price": 399,
-      "checked": false
-    },
-    {
-      "id": "14",
-      "name": "Apple AirPods Pro",
-      "price": 249,
-      "checked": true
-    },
-    {
-      "name": "a",
+      "name": "fdjgjfd",
       "price": 0,
-      "checked": false,
-      "id": "ijNeXBi"
+      "checked": true,
+      "id": "oTQfrw1"
     },
     {
-      "name": "b",
-      "price": null,
-      "checked": null,
-      "id": "8JCes1P"
-    },
-    {
-      "name": "b",
+      "name": "jsdbfsd",
       "price": 0,
-      "checked": false,
-      "id": "bp3NRVu"
-    },
-    {
-      "name": "a",
-      "price": null,
-      "checked": null,
-      "id": "l_LmZwh"
-    },
-    {
-      "name": "a",
-      "price": 0,
-      "checked": false,
-      "id": "QobODrR"
-    },
-    {
-      "name": "a",
-      "price": null,
-      "checked": null,
-      "id": "nJEDH_X"
-    },
-    {
-      "name": "a",
-      "price": null,
-      "checked": null,
-      "id": "dNqI_la"
-    },
-    {
-      "name": "a",
-      "price": null,
-      "checked": null,
-      "id": "uucc35d"
+      "checked": true,
+      "id": "fMKM0tW"
     }
   ]
 }
