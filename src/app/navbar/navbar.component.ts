@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppStateService } from '../services/app-state.service';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +13,5 @@ export class NavbarComponent {
     {title: "New Product", path: "/newProduct", icon: "plus-circle"},
   ];
 
-  constructor(public appStateService: AppStateService) {
-    this.appStateService = appStateService;
-  }
+  constructor(public ls: LoadingService){};
 }
