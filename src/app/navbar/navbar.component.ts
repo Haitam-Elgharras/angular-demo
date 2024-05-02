@@ -9,8 +9,8 @@ import { LoadingService } from '../services/loading.service';
 export class NavbarComponent {
   actions: Array<any> = [
     {title: "Home", path: "/home",icon: "house"},
-    {title: "Products", path: "/products", icon: "box"},
-    {title: "New Product", path: "/newProduct", icon: "plus-circle"},
+    {title: "Products", path: "/admin/products", icon: "box"},
+    {title: "New Product", path: "/admin/newProduct", icon: "plus-circle"},
   ];
 
   constructor(public ls: LoadingService){};

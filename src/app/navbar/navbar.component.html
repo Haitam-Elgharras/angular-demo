@@ -13,7 +13,7 @@
           <i class="bi bi-{{action.icon}}"></i>
         </button>
       </li>
-      <!-- using async pipe to subscribe to the observable and write the result to the template -->
+      <!-- using async pipe to subscribe to the observable and write the result to the template-->
       <li class="nav-item" *ngIf="ls.isLoading$ | async">
         <div class="spinner-border ms-2" role="status">
         </div>

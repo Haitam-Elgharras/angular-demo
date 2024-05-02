@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorComponent } from './error/error.component';
 import { AppHttpInterceptor } from './services/app-http.interceptor';
+import { LoginComponent } from './login/login.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 
 // import forms module
@@ -27,6 +29,8 @@ import { AppHttpInterceptor } from './services/app-http.interceptor';
     DashboardComponent,
     NavbarComponent,
     ErrorComponent,
+    LoginComponent,
+    AdminTemplateComponent,
   ],
   imports: [
     BrowserModule,
