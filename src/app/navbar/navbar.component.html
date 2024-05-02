@@ -1,22 +1,24 @@
-<!-- create a navigation bar -->
-<nav class="p-3">
-    <ul class="nav nav-pills">
-      <li class="nav-item"
-      *ngFor="let action of actions"
-      >
-        <button 
-          [routerLink]="action.path"
-          class="btn btn-outline-success ms-1"
-          routerLinkActive="active" 
-        >
-          {{action.title}}
-          <i class="bi bi-{{action.icon}}"></i>
-        </button>
-      </li>
-      <!-- using async pipe to subscribe to the observable and write the result to the template-->
-      <li class="nav-item" *ngIf="ls.isLoading$ | async">
-        <div class="spinner-border ms-2" role="status">
-        </div>
-      </li>
-    </ul>
-  </nav>
+<nav class="p-3 navbar">
+  <ul class="nav nav-pills p-3">
+    <li *ngFor="let action of actions">
+      <button
+        (click)="setCurrentAction(action)"
+        routerLink = "{{action.route}}"
+        [class]="action == currentAction?'btn btn-success m-1':'btn btn-outline-success m-1'"
+      >{{action.title}}
+        <i class="bi bi-{{action.icon}}"></i>
+      </button>
+    </li>
+    <li *ngIf="loadingService.isLoading$ | async">
+      <div class="spinner-border" role="status">
+    </div></li>
+  </ul>
+  <ul class="nav nav-pills">
+    <li *ngIf="appState.authState.isAuthenticated">{{appState.authState.username}}
+      <button class="btn btn-danger" (click)="logout()">logout</button>
+    </li>
+    <li *ngIf="!appState.authState.isAuthenticated">
+      <button class="btn btn-success" (click)="login()">Login</button>
+    </li>
+  </ul>
+</nav>

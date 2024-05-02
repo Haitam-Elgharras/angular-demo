@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { LoadingService } from '../services/loading.service';
+import {AppStateService} from "../services/app-state.service";
+import {LoadingService} from "../services/loading.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +9,25 @@ import { LoadingService } from '../services/loading.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  actions: Array<any> = [
-    {title: "Home", path: "/home",icon: "house"},
-    {title: "Products", path: "/admin/products", icon: "box"},
-    {title: "New Product", path: "/admin/newProduct", icon: "plus-circle"},
-  ];
+  actions : Array<any> = [
+    {title : "Home",route : "/admin/home", icon : "house"},
+    {title : "Products",route : "/admin/products", icon : "search"},
+    {title : "New Product",route : "/admin/newProduct", icon : "save"}
+  ]
+  currentAction :any;
+  constructor(public appState:AppStateService,public loadingService:LoadingService,public router:Router) {
+  }
 
-  constructor(public ls: LoadingService){};
+  setCurrentAction(action: any) {
+    this.currentAction = action;
+  }
+
+  logout() {
+    this.appState.authState={}
+    this.router.navigateByUrl("/login")
+  }
+
+  login() {
+    this.router.navigateByUrl("/login")
+  }
 }
