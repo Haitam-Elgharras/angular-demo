@@ -27,12 +27,12 @@
                             <input type="checkbox" [checked]="product.checked" (change)="handleCheckedChange(product)">
                         </td>
                         <!-- button to delete a product -->
-                        <td>
+                        <td  *ngIf="appStateService.authState.roles.includes('ADMIN')">
                             <button class="btn btn-danger" (click)="handleDeleteProduct(product)">
                                 <i class="bi bi-trash"></i>
                             </button>
                         </td>
-                        <td>
+                        <td *ngIf="appStateService.authState.roles.includes('ADMIN')">
                             <button class="btn btn-warning" (click)="handleEditProduct(product)">
                                 <i class="bi bi-pencil"></i>
                             </button>

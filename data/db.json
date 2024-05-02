@@ -3,23 +3,22 @@
     {
       "id": "user1",
       "password": "MTIzNA==",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsIm5hbWUiOiJtb2hhbW1lZCIsImlhdCI6MTUxNjIzOTAyMiwicm9sZXMiOlsiVVNFUiJdfQ.bttU0Bj0cuffNWpXuGIvHxag-0PaGRuy3cdzhHsyswE"
     },
     {
       "id": "admin",
       "password": "MTIzNA==",
-      "roles": ["USER","ADMIN"],
+      "roles": [
+        "USER",
+        "ADMIN"
+      ],
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJtb2hhbW1lZCIsImlhdCI6MTUxNjIzOTAyMiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl19.z_Po3vsgd_pUixQrzhkLpvMVA4rdUBZWrQE5nw1wMTQ"
     }
   ],
   "products": [
-    {
-      "id": "AQxTaJ8",
-      "name": "dfhsd",
-      "price": 0,
-      "checked": true
-    },
     {
       "name": "dsged",
       "price": 0,
@@ -43,12 +42,6 @@
       "price": 0,
       "checked": true,
       "id": "weqFckW"
-    },
-    {
-      "name": "sfdguhdsf",
-      "price": 0,
-      "checked": false,
-      "id": "9PMPl3o"
     },
     {
       "name": "jsdfhjhsd",

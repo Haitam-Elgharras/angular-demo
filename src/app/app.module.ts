@@ -15,6 +15,7 @@ import { ErrorComponent } from './error/error.component';
 import { AppHttpInterceptor } from './services/app-http.interceptor';
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 
 // import forms module
@@ -31,6 +32,7 @@ import { AdminTemplateComponent } from './admin-template/admin-template.componen
     ErrorComponent,
     LoginComponent,
     AdminTemplateComponent,
+    NotAuthorizedComponent,
   ],
   imports: [
     BrowserModule,
